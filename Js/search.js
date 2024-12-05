@@ -1,4 +1,6 @@
 const emojiList = document.getElementById('emojiList');
+const emojiSearch = document.getElementById('searchInput');
+const emojiPutInput = document.getElementById('searchInput')
 
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.querySelector("#searchInput");
@@ -30,10 +32,30 @@ function loadEmoji(data){
             'align-middle',
             'w-10',
             'text-2xl'
-
-            
         );
+        li.addEventListener('click', () => addEmojiToInput(emoji.character));
         emojiList.appendChild(li); 
     });
 
+}
+
+
+emojiSearch.addEventListener('keyup', e => {
+    let value = e.target.value.toLowerCase(); 
+    let emojis = document.querySelectorAll('#emojiList li');
+    emojis.forEach(emoji => {
+        let emojiName = emoji.getAttribute('emoji-name').toLowerCase();
+        if (emojiName.includes(value)) {
+            emoji.style.display = 'flex'; 
+        } else {
+            emoji.style.display = 'none'; 
+        }
+    });
+});
+
+
+function addEmojiToInput(emojiCharacter) {
+    const emojiSearch = document.querySelector('#searchInput'); // Sélectionner le champ input
+    emojiSearch.value += emojiCharacter; // Ajouter l'emoji dans le champ
+    emojiSearch.focus(); // Focus sur la barre de recherche
 }
