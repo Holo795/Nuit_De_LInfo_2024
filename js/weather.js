@@ -167,6 +167,7 @@ function initializeWeather(weatherType) {
         rainCloud: document.getElementById("rain-cloud"),
         snowCloud: document.getElementById("snow-cloud"),
         sunny: document.getElementById("sunny"),
+        mist: document.getElementById("mist"),
     };
 
     Object.values(elements).forEach((element) => element.classList.add("hidden"));
@@ -185,12 +186,12 @@ function initializeWeather(weatherType) {
         '09n': () => { elements.rainCloud.classList.remove('hidden'); startCloudAnimation('gray', 2000); },
         '10d': () => { elements.sunny.classList.remove('hidden'); elements.rainCloud.classList.remove('hidden'); startCloudAnimation('gray', 2000); },
         '10n': () => { elements.sunny.classList.remove('hidden'); elements.rainCloud.classList.remove('hidden'); startCloudAnimation('gray', 2000); },
-        '11d': () => console.log('thunderstorm'),
-        '11n': () => console.log('thunderstorm'),
+        '11d': () => { elements.rainCloud.classList.remove('hidden'); startCloudAnimation('gray', 6000, '⚡'); },
+        '11n': () => { elements.rainCloud.classList.remove('hidden'); startCloudAnimation('gray', 6000, '⚡'); },
         '13d': () => { elements.snowCloud.classList.remove('hidden'); startCloudAnimation('white', 2000, '❆'); },
         '13n': () => { elements.snowCloud.classList.remove('hidden'); startCloudAnimation('white', 2000, '❆'); },
-        '50d': () => console.log('mist'),
-        '50n': () => console.log('mist')
+        '50d': () => { elements.mist.classList.remove('hidden'); },
+        '50n': () => { elements.mist.classList.remove('hidden'); },
     };
 
     (weatherConfig[weatherType] || (() => console.log("No matching animation")) )();

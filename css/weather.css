@@ -17,6 +17,12 @@
     -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, transparent, transparent, #0005);
 }
 
+.mist {
+    background: #E0E0E0;
+    color: #E0E0E0;
+    
+}
+
 .sunny {
     bottom: 25px;
     right: 150px;
@@ -70,6 +76,12 @@
 .cloud-yellow {
     background: #FFD700;
     color: #FFD700;
+}
+
+.cloud-mist {
+    background: rgba(255, 255, 255);
+    color: rgba(255, 255, 255);
+    opacity: 0.4;
 }
 
 .down-text {
