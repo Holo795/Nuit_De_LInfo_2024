@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    color:black;
+    align-items: center;
+    position: relative; /* Contexte de positionnement pour les images superposées */
+    height: auto; /* Taille du conteneur */
+}
+
+
+.corps {
+    width: 35%; /* Ajuste l'image sans déformation */
+    z-index: 0; /* Place en arrière-plan */
+}
+
+
+.popup-trigger {
+    position: absolute;
+    cursor: pointer;
+    transition: 1s ;
+}
+
+.popup-trigger:hover {
+    width: 12%;
+}
+
+.coeur {
+    position: absolute;
+    width: 7%; /* Largeur personnalisée */
+    left: 17%;
+    top: 30%;
+
+}
+
+.poumon {
+    position: absolute;
+    width: 10%; /* Largeur personnalisée */
+    top: 38%;
+    left: 10%;
+}
+
+.estomac {
+    position: absolute;
+    top: 60%; /* Positionnez l'image en dessous des deux autres */
+    left: 10%;
+    width: 10%; /* Taille personnalisée */
+    height: auto; /* Maintient le ratio */
+    z-index: 2; /* Au-dessus de l'image de fond */
+}
+
+.sueur {
+    position: absolute;
+    top: 10%; /* Positionnez l'image en dessous des deux autres */
+    left : 5%;
+    width: 10%; /* Taille personnalisée */
+    height: auto; /* Maintient le ratio */
+    z-index: 2; /* Au-dessus de l'image de fond */
+}
+
+.popup {
+    position: absolute;
+    left: 40%;
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Effet de fondu */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s;
+}
+
+.popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    width: 85%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup.show .popup-content {
+    transform: scale(1.05); /* Effet zoom */
+}
+
+.popup-content img {
+    height: 60%;
+    width: 60%;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-height : 795px){
+    .popup-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transform: scale(1);
+        transition: transform 0.3s ease;
+        width: 55%;
+        height: 55vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: small;
+    }
+}
+
+
+  
