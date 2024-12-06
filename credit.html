@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/credit.css">
+</head>
+
+<body id="background" class="flex flex-col bg-sky-700 h-full 
+                            opacity-0
+                            transition-all duration-1000
+                            pb-[20px] overflow-x-hidden">
+
+    <header class="bg-blue-800 shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="logo">
+                <h1 class="text-3xl font-bold hover:text-yellow-400 transition-colors">
+                    Network Ninja
+                </h1>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="text-white hover:text-yellow-400 transition-colors">Accueil</a>
+                    </li>
+                    <li><a href="weather.html" class="text-white hover:text-yellow-400 transition-colors">Météo</a>
+                    </li>
+                    <li><a href="credit.html" class="text-white hover:text-yellow-400 transition-colors">Crédit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="h-full 
+             flex-row flex-row-reverse">
+
+        <section class="w-full h-16 flex flex-row-reverse">
+            <div class="relative inline-block text-left mt-2 mr-10 z-50">
+                <!-- Bouton pour ouvrir/fermer le menu -->
+                <button id="menu-button" class="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 
+                                                transform transition-all duration-500 cursor-pointer z-50">
+                    Menu
+                    <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <!-- Menu déroulant avec transition -->
+                <div id="menu-dropdown"
+                    class="absolute right-0 z-120 w-56 origin-top-right bg-white 
+                                                border border-gray-200 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 
+                                                focus:outline-none opacity-0 transform scale-95 transition-all duration-500 ease-out pointer-events-none">
+                    <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button">
+                        <div id="radio" class="flex flex-row text-xs px-4 py-2 gap-2">
+                            <div id="radio-button" class="flex flex-row gap-1">
+                                <input id="Light-mode" type="radio" name="Light-switch" />
+                                <p>Light mode</p>
+                            </div>
+                            <div id="radio-button" class="flex flex-row gap-1">
+                                <input id="Dark-mode" type="radio" name="Light-switch" />
+                                <p>Dark mode</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="header z-30">
+            <section class=" sky">
+
+            </section>
+            <section class=" astre">
+            </section>
+            <section>
+                <img class="earth" src="./images/earth.png" alt="earth">
+                <img class="earthbis" src="./images/earthbis.png" alt="earthbis">
+            </section>
+            <section class="beach">
+                <div><img class="sand" src="./images/sand.jpg" alt="sand"></div>
+                <div><img class="sea" src="./images/sea.png" alt="sea"></div>
+                <div><img class="seabis" src="./images/seabis.png" alt="seabis"></div>
+            </section>
+        </section>
+
+        <section class="w-full flex justify-center gap-10">
+            <div id="contributors" class="mt-[20%] ml-[10%] text-center">
+                <div id="Github-profile"
+                    class="rounded-full bg-[#C2B280] lg:h-32 lg:w-32 sm:w-16 sm:h-16 z-20 mt-[20%] mr-[10%] transform transition duration-1000">
+                </div>
+                <h1>VOID575</h1>
+                <p>Designer front-end</p>
+                <div id="Github-profile2"
+                    class="rounded-full bg-[#C2B280] lg:h-32 lg:w-32 sm:w-16 sm:h-16 z-20 mt-[20%] mr-[10%] transform transition duration-1000">
+                </div>
+                <h1>Noah</h1>
+                <p>Designer front-end</p>
+                <div id="Github-profile3"
+                    class="rounded-full bg-[#C2B280] lg:h-32 lg:w-32 sm:w-16 sm:h-16 z-20 mt-[20%] mr-[10%] transform transition duration-1000">
+                </div>
+                <h1>Evan</h1>
+                <p>Designer front-end</p>
+            </div>
+            <div class="h-[2000px] w-64 h-16 bg-[#C2B280] rounded-full z-10 animate-wave ring-8 "></div>
+            <div class="mt-[20%] mr-[10%] text-center">
+                <div id="Github-profile4"
+                    class="rounded-full bg-[#C2B280] lg:h-32 lg:w-32 sm:w-16 sm:h-16 z-20 mt-[20%] ml-[10%] transform transition duration-1000">
+                </div>
+                <h1>Marledia</h1>
+                <p>Designer graphique</p>
+                <div id="Github-profile5"
+                    class="rounded-full bg-[#C2B280] lg:h-32 lg:w-32 sm:w-16 sm:h-16 z-20 mt-[20%] ml-[10%] transform transition duration-1000">
+                </div>
+                <h1>Holo795</h1>
+                <p>Merger</p>
+                <div id="Github-profile6"
+                    class="rounded-full bg-[#C2B280] lg:h-32 lg:w-32 sm:w-16 sm:h-16 z-20 mt-[20%] ml-[10%] transform transition duration-1000">
+                </div>
+                <h1>Gabrielle</h1>
+                <p>Merger</p>
+            </div>
+        </section>
+    </div>
+    <script type="text/javascript" src="./js/main.js"></script>
+</body>
+
+</html>
