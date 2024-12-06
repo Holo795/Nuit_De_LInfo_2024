@@ -44,8 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     `;
                 resultsContainer.appendChild(resultElement);
             });
-        } else {
-            resultsContainer.innerHTML = "<p>Aucun résultat trouvé.</p>";
         }
     }
 
