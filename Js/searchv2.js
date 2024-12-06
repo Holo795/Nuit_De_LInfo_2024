@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const popupContainer = document.querySelector("#popupContainer");
 
     searchInput.addEventListener("focus", () => {
+        console.log('blablabla')
         popupContainer.classList.remove("hidden");
     });
 
