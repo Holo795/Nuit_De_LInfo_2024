@@ -17,15 +17,16 @@ document.addEventListener("DOMContentLoaded", () => {
             popupContainer.classList.add("hidden");
         }
     });
-})
-
-fetch('https://emoji-api.com/emojis?access_key=aaab5aea8be43727a7055a906cfbe1add35c6a47')
+    fetch('https://emoji-api.com/emojis?access_key=aaab5aea8be43727a7055a906cfbe1add35c6a47')
     .then(res => res.json())
     .then(data => {
         emojiData = data
         loadEmoji(data)
     }
     )
+
+})
+
 
     function loadEmoji(data, text = null) {
         // Effacer la liste existante d'emojis
