@@ -1,163 +1,200 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <link rel="stylesheet" href="">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/video.css">
     <title>La nuit de l'info 2024</title>
 </head>
 
-<body>
-    <h1>Network Ninja</h1>
+<body class="text-white bg-gray-300 font-sans">
 
+<header class="bg-blue-800 shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="logo">
+            <h1 class="text-3xl font-bold hover:text-yellow-400 transition-colors">
+                Network Ninja
+            </h1>
+        </div>
+        <div class="flex relative">
+            <!-- Barre de recherche -->
+            <input id="searchInput" type="email" placeholder="Search Something..."
+                   class="w-full px-4 py-2 rounded-lg outline-none bg-transparent text-gray-300 text-sm placeholder-gray-400 focus:ring-2 focus:ring-yellow-400 border-2 border-blue-500" />
+            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-800 p-2 flex items-center justify-center hover:bg-gray-400 hover:rounded-lg hover:text-blue-800  transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192.904 192.904" width="16px" class="fill-current">
+                    <path
+                            d="m190.707 180.101-47.078-47.077c11.702-14.072 18.752-32.142 18.752-51.831C162.381 36.423 125.959 0 81.191 0 36.422 0 0 36.423 0 81.193c0 44.767 36.422 81.187 81.191 81.187 19.688 0 37.759-7.049 51.831-18.751l47.079 47.078a7.474 7.474 0 0 0 5.303 2.197 7.498 7.498 0 0 0 5.303-12.803zM15 81.193C15 44.694 44.693 15 81.191 15c36.497 0 66.189 29.694 66.189 66.193 0 36.496-29.692 66.187-66.189 66.187C44.693 147.38 15 117.689 15 81.193z">
+                    </path>
+                </svg>
+            </button>
+            <!-- Popup container -->
+            <div id="popupContainer" class="hidden absolute top-full mt-2 w-80 bg-gray-200 border border-gray-400 rounded-lg shadow-lg p-4 z-50">
+                <p class="text-black text-sm">Emoji recent :</p>
+                <ul id="emojiList" class="mt-2 flex flex-wrap gap-2 space-y-2 max-h-60 overflow-y-auto">
 
-
-    
-        
-    <div class = "container">
-        <img src="corps_humain_sans_organe.webp " alt="corps" class="corps">
-        <img id="openPopup4" src="Goutte_seul.webp" alt="Image 4" class="popup-trigger sueur">
-        <img id="openPopup2" src="Poumon.webp" alt="Image 2" class="popup-trigger poumon">
-        <img id="openPopup1" src="coeur.webp" alt="Image 1" class="popup-trigger coeur">
-        <img id="openPopup3" src="Estomac_image.webp" alt="Image 3" class="popup-trigger estomac">
-    
-
-
-        <!-- Pop-ups -->
-        <div id="popup1" class="popup">
-            <div class="popup-content">
-                <span class="close" data-popup="popup1">&times;</span>
-                <h2>Le Coeur et la Circulation thermohaline</h2>
-                <p>Le cœur pompe le sang, distribuant les nutriments et l’oxygène dans tout le corps, maintenant la vie tout comme les océans qui jouent un rôle similaire en étant au centre de la circulation thermohaline, souvent appelée le "cœur des océans". Ce processus transporte la chaleur, les nutriments et l’énergie à travers la planète, influençant le climat et soutenant les écosystèmes marins.</p>
-                <img src="https://vezinator.wordpress.com/wp-content/uploads/2010/09/gulfstreamanim.gif" alt="image coeur" >
-                <article class="buttonpop">
-                    <button id="openPopup1.1" class="good">Bon fonctionnement</button>
-                    <button id="openPopup1.2" class="bad">Dysfonctionnement</button>
-                </article>
+                </ul>
             </div>
         </div>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-white hover:text-yellow-400 transition-colors">Accueil</a></li>
+                <li><a href="#" class="text-white hover:text-yellow-400 transition-colors">Ouloulou</a></li>
+                <li><a href="weather.html" class="text-white hover:text-yellow-400 transition-colors">Météo</a></li>
+                <li><a href="#" class="text-white hover:text-yellow-400 transition-colors">Crédit</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div class="video_ocean">
+    <video width="640" height="360" controls>
+        <source src="mp4/océan.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la lecture des vidéos HTML5.
+    </video>
+</div>
 
-        <div id="popup2" class="popup">
-            <div class="popup-content">
-                <span class="close" data-popup="popup2">&times;</span>
-                <h2>Les poumons et la production d'oxygene des Oceans</h2>
-                <p>Les poumons permettent les échanges gazeux en absorbant l’oxygène et en expulsant le dioxyde de carbone, essentiel pour la respiration. Les océans sont souvent appelés les "poumons de la planète" car ils produisent environ 50% de l’oxygène de la Terre, principalement grâce au phytoplancton, et absorbent une grande partie du dioxyde de carbone présent dans l’atmosphère.</p>
-                <img src="https://manouvellegeneration.org/wp-content/uploads/2023/12/Picture1.jpg" alt="image Poumons">
-                <article class="buttonpop">
-                    <button id="openPopup2.1" class="good">Bon fonctionnement</button>
-                    <button id="openPopup2.2" class="bad">Dysfonctionnement</button>
-                </article>
-            </div>
+<div class = "container">
+    <img src="image pop_up/corps_humain_sans_organe.webp " alt="corps" class="corps">
+    <img id="openPopup4" src="image pop_up/Goutte_seul.webp" alt="Image 4" class="popup-trigger sueur">
+    <img id="openPopup2" src="image pop_up/Poumon.webp" alt="Image 2" class="popup-trigger poumon">
+    <img id="openPopup1" src="image pop_up/coeur.webp" alt="Image 1" class="popup-trigger coeur">
+    <img id="openPopup3" src="image pop_up/Estomac_image.webp" alt="Image 3" class="popup-trigger estomac">
+
+
+
+    <!-- Pop-ups -->
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup1">&times;</span>
+            <h2>Le Coeur et la Circulation thermohaline</h2>
+            <p>Le cœur pompe le sang, distribuant les nutriments et l’oxygène dans tout le corps, maintenant la vie tout comme les océans qui jouent un rôle similaire en étant au centre de la circulation thermohaline, souvent appelée le "cœur des océans". Ce processus transporte la chaleur, les nutriments et l’énergie à travers la planète, influençant le climat et soutenant les écosystèmes marins.</p>
+            <img src="https://vezinator.wordpress.com/wp-content/uploads/2010/09/gulfstreamanim.gif" alt="image coeur" >
+            <article class="buttonpop">
+                <button id="openPopup1.1" class="good">Bon fonctionnement</button>
+                <button id="openPopup1.2" class="bad">Dysfonctionnement</button>
+            </article>
         </div>
+    </div>
 
-        <div id="popup3" class="popup">
-            <div class="popup-content">
-                <span class="close" data-popup="popup3">&times;</span>
-                <h2>L'estomac et la digestions de la matiere organique par les oceans</h2>
-                <p>L’estomac décompose les aliments et extrait les nutriments nécessaires au fonctionnement du corps.
-                    Les océans jouent un rôle similaire en "digérant" et recyclant la matière organique. Les zones comme les fonds marins ou les récifs coralliens transforment les nutriments pour alimenter les écosystèmes, tout comme l’estomac soutient le corps.</p>
-                <img src="https://revues-msh.uca.fr/revue-cmh/docannexe/image/425/img-1-small800.png" alt="image estomac">    
-                <article class="buttonpop">
-                    <button id="openPopup3.1" class="good">Bon fonctionnement</button>
-                    <button id="openPopup3.2" class="bad">Dysfonctionnement</button>
-                </article>
-            </div>
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup2">&times;</span>
+            <h2>Les poumons et la production d'oxygene des Oceans</h2>
+            <p>Les poumons permettent les échanges gazeux en absorbant l’oxygène et en expulsant le dioxyde de carbone, essentiel pour la respiration. Les océans sont souvent appelés les "poumons de la planète" car ils produisent environ 50% de l’oxygène de la Terre, principalement grâce au phytoplancton, et absorbent une grande partie du dioxyde de carbone présent dans l’atmosphère.</p>
+            <img src="https://manouvellegeneration.org/wp-content/uploads/2023/12/Picture1.jpg" alt="image Poumons">
+            <article class="buttonpop">
+                <button id="openPopup2.1" class="good">Bon fonctionnement</button>
+                <button id="openPopup2.2" class="bad">Dysfonctionnement</button>
+            </article>
         </div>
+    </div>
 
-        <div id="popup4" class="popup">
-            <div class="popup-content">
-                <span class="close" data-popup="popup4">&times;</span>
-                <h2>La sueur et la regulation de la temperateur terreste</h2>
-                <p>La sueur régule la température corporelle en libérant de la chaleur par évaporation.
-                    D'une maniere similaire es océans régulent la température globale en absorbant la chaleur du soleil et en redistribuant cette énergie via les courants marins. 
-                    Ce processus influence les climats régionaux et globaux, tout comme la sueur maintient l’équilibre thermique dans le corps.
-                </p>
-                <img src="https://www.aquarium-tropical.fr/sites/default/files/styles/paragraphe_paysage_desktop/public/aquarium/thumbnails/image/ocean-climat_ou_en_est-on_giec.jpg?h=6fc42d4b&itok=W9Z7O39O" alt="image sueur">
-                <article class="buttonpop">
-                    <button id="openPopup4.1" class="good">Bon fonctionnement</button>
-                    <button id="openPopup4.2" class="bad">Dysfonctionnement</button>
-                </article>
-            </div>
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup3">&times;</span>
+            <h2>L'estomac et la digestions de la matiere organique par les oceans</h2>
+            <p>L’estomac décompose les aliments et extrait les nutriments nécessaires au fonctionnement du corps.
+                Les océans jouent un rôle similaire en "digérant" et recyclant la matière organique. Les zones comme les fonds marins ou les récifs coralliens transforment les nutriments pour alimenter les écosystèmes, tout comme l’estomac soutient le corps.</p>
+            <img src="https://revues-msh.uca.fr/revue-cmh/docannexe/image/425/img-1-small800.png" alt="image estomac">    
+            <article class="buttonpop">
+                <button id="openPopup3.1" class="good">Bon fonctionnement</button>
+                <button id="openPopup3.2" class="bad">Dysfonctionnement</button>
+            </article>
         </div>
+    </div>
 
-        <div id="Popup1.1" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup1.1">&times;</span>
-                <h2>Les benefices d'un coeur fonctionel</h2>
-                <p>Une circulation océanique saine régule les températures mondiales et soutient la biodiversité marine, contribuant à un climat stable et à des écosystèmes marins florissants.</p>
-                <img src="https://www.30millionsdamis.fr/fileadmin/migratedNewsAssets/Images/AdobeStock_100526045.jpg" alt="image coeur" >
-            </div>
+    <div id="popup4" class="popup">
+        <div class="popup-content">
+            <span class="close" data-popup="popup4">&times;</span>
+            <h2>La sueur et la regulation de la temperateur terreste</h2>
+            <p>La sueur régule la température corporelle en libérant de la chaleur par évaporation.
+                D'une maniere similaire es océans régulent la température globale en absorbant la chaleur du soleil et en redistribuant cette énergie via les courants marins. 
+                Ce processus influence les climats régionaux et globaux, tout comme la sueur maintient l’équilibre thermique dans le corps.
+            </p>
+            <img src="https://www.aquarium-tropical.fr/sites/default/files/styles/paragraphe_paysage_desktop/public/aquarium/thumbnails/image/ocean-climat_ou_en_est-on_giec.jpg?h=6fc42d4b&itok=W9Z7O39O" alt="image sueur">
+            <article class="buttonpop">
+                <button id="openPopup4.1" class="good">Bon fonctionnement</button>
+                <button id="openPopup4.2" class="bad">Dysfonctionnement</button>
+            </article>
         </div>
+    </div>
 
-        <div id="Popup1.2" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup1.2">&times;</span>
-                <h2>Les danger d'un Dysfonctionnement du coeur</h2>
-                <p>Si cette circulation est perturbée (par exemple par le réchauffement climatique), cela peut entraîner des événements climatiques extrêmes, comme des vagues de chaleur océaniques, des inondations côtières et des pertes massives d’espèces marines.</p>
-                <img src="https://www.actu-environnement.com/images/illustrations/news/34969_large.jpg" alt="image coeur" >
-            </div>
+    <div id="Popup1.1" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup1.1">&times;</span>
+            <h2>Les benefices d'un coeur fonctionel</h2>
+            <p>Une circulation océanique saine régule les températures mondiales et soutient la biodiversité marine, contribuant à un climat stable et à des écosystèmes marins florissants.</p>
+            <img src="https://www.30millionsdamis.fr/fileadmin/migratedNewsAssets/Images/AdobeStock_100526045.jpg" alt="image coeur" >
         </div>
+    </div>
 
-        <div id="Popup2.1" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup2.1">&times;</span>
-                <h2>Les benefices des poumons en bonne santé</h2>
-                <p>Si les océans fonctionnent correctement, ils absorbent efficacement le CO2 et génèrent de l’oxygène, maintenant un climat équilibré et soutenant les chaînes alimentaires marines.</p>
-
-                <img src="https://www.30millionsdamis.fr/fileadmin/migratedNewsAssets/Images/AdobeStock_100526045.jpg" alt="image coeur" >
-            </div>
+    <div id="Popup1.2" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup1.2">&times;</span>
+            <h2>Les danger d'un Dysfonctionnement du coeur</h2>
+            <p>Si cette circulation est perturbée (par exemple par le réchauffement climatique), cela peut entraîner des événements climatiques extrêmes, comme des vagues de chaleur océaniques, des inondations côtières et des pertes massives d’espèces marines.</p>
+            <img src="https://www.actu-environnement.com/images/illustrations/news/34969_large.jpg" alt="image coeur" >
         </div>
+    </div>
 
-        <div id="Popup2.2" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup2.2">&times;</span>
-                <h2>Les consequences d'un poumon malade</h2>
-                <p> Lorsque les océans sont perturbés (par exemple en raison du réchauffement ou de l'acidification), leur capacité à absorber le CO2 et à produire de l'oxygène diminue, ce qui peut accélérer le réchauffement climatique et affecter les écosystèmes marins.</p>
-                <img src="https://cdn.futura-sciences.com/cdn-cgi/image/width=1920,quality=50,format=auto/sources/images/climat-acceleration.jpg" alt="image coeur" >
-            </div>
-        </div>
+    <div id="Popup2.1" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup2.1">&times;</span>
+            <h2>Les benefices des poumons en bonne santé</h2>
+            <p>Si les océans fonctionnent correctement, ils absorbent efficacement le CO2 et génèrent de l’oxygène, maintenant un climat équilibré et soutenant les chaînes alimentaires marines.</p>
 
-        <div id="Popup3.1" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup3.1">&times;</span>
-                <h2>Les avantages du fonctionnement de l'estomac</h2>
-                <p>Un océan sain recycle les nutriments, soutenant ainsi la biodiversité marine et garantissant un flux constant de ressources pour les chaînes alimentaires marines.</p>
-                <img src="https://www.30millionsdamis.fr/fileadmin/migratedNewsAssets/Images/AdobeStock_100526045.jpg" alt="image coeur" >
-            </div>
+            <img src="https://www.30millionsdamis.fr/fileadmin/migratedNewsAssets/Images/AdobeStock_100526045.jpg" alt="image coeur" >
         </div>
-        
-        <div id="Popup3.2" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup3.2">&times;</span>
-                <h2>Les consequences du Dysfonctionnement de l'estomac</h2>
-                <p>Si les océans sont pollués ou que les écosystèmes marins sont dégradés, la capacité de recyclage des nutriments est réduite, ce qui peut entraîner la mort d'espèces marines, la dégradation des habitats et un déséquilibre écologique.</p>
-                <img src="https://www.togo-port.net/wp-content/uploads/2022/09/Environnement-Pollution-marine-dechets-plastiques.png" alt="image coeur" >
-            </div>
-        </div>
+    </div>
 
-        <div id="Popup4.1" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup4.1">&times;</span>
-                <h2>Les bienfaits de la sueur</h2>
-                <p>Les océans absorbent une grande quantité de chaleur du soleil et la redistribuent à travers les courants marins, régulant ainsi les températures mondiales et stabilisant les climats régionaux.</p>
-                <img src="https://www.aquaportail.com/pictures2202/phones/albedo.jpg" alt="image coeur" >
-            </div>
+    <div id="Popup2.2" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup2.2">&times;</span>
+            <h2>Les consequences d'un poumon malade</h2>
+            <p> Lorsque les océans sont perturbés (par exemple en raison du réchauffement ou de l'acidification), leur capacité à absorber le CO2 et à produire de l'oxygène diminue, ce qui peut accélérer le réchauffement climatique et affecter les écosystèmes marins.</p>
+            <img src="https://cdn.futura-sciences.com/cdn-cgi/image/width=1920,quality=50,format=auto/sources/images/climat-acceleration.jpg" alt="image coeur" >
         </div>
+    </div>
 
-        <div id="Popup4.2" class="bpopup">
-            <div class="popup-content2">
-                <span class="close" data-popup="Popup4.2">&times;</span>
-                <h2>Les dangers qu'apporte le mauvais fonctionnement de la sueur</h2>
-                <p>Si les océans sont incapables de réguler la chaleur efficacement, en raison du réchauffement climatique, cela peut entraîner des hausses de température extrêmes, des phénomènes météorologiques extrêmes et des perturbations climatiques globales.</p>
-                <img src="https://www.pourquoidocteur.fr/media/article/COPY_istock-1011128754-1590503709.jpg" alt="image coeur" >
-            </div>
+    <div id="Popup3.1" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup3.1">&times;</span>
+            <h2>Les avantages du fonctionnement de l'estomac</h2>
+            <p>Un océan sain recycle les nutriments, soutenant ainsi la biodiversité marine et garantissant un flux constant de ressources pour les chaînes alimentaires marines.</p>
+            <img src="https://www.30millionsdamis.fr/fileadmin/migratedNewsAssets/Images/AdobeStock_100526045.jpg" alt="image coeur" >
         </div>
-
     </div>
     
+    <div id="Popup3.2" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup3.2">&times;</span>
+            <h2>Les consequences du Dysfonctionnement de l'estomac</h2>
+            <p>Si les océans sont pollués ou que les écosystèmes marins sont dégradés, la capacité de recyclage des nutriments est réduite, ce qui peut entraîner la mort d'espèces marines, la dégradation des habitats et un déséquilibre écologique.</p>
+            <img src="https://www.togo-port.net/wp-content/uploads/2022/09/Environnement-Pollution-marine-dechets-plastiques.png" alt="image coeur" >
+        </div>
+    </div>
 
+    <div id="Popup4.1" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup4.1">&times;</span>
+            <h2>Les bienfaits de la sueur</h2>
+            <p>Les océans absorbent une grande quantité de chaleur du soleil et la redistribuent à travers les courants marins, régulant ainsi les températures mondiales et stabilisant les climats régionaux.</p>
+            <img src="https://www.aquaportail.com/pictures2202/phones/albedo.jpg" alt="image coeur" >
+        </div>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="Popup4.2" class="bpopup">
+        <div class="popup-content2">
+            <span class="close" data-popup="Popup4.2">&times;</span>
+            <h2>Les dangers qu'apporte le mauvais fonctionnement de la sueur</h2>
+            <p>Si les océans sont incapables de réguler la chaleur efficacement, en raison du réchauffement climatique, cela peut entraîner des hausses de température extrêmes, des phénomènes météorologiques extrêmes et des perturbations climatiques globales.</p>
+            <img src="https://www.pourquoidocteur.fr/media/article/COPY_istock-1011128754-1590503709.jpg" alt="image coeur" >
+        </div>
+    </div>
+
+</div>
+<script src="js/index.js"></script>
 </body>
+
 </html>
