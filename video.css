@@ -123,6 +123,7 @@ video {
   flex-direction: row;
   margin-top: 1%;
   height: 5%;
+  
 }
 
 .good{
@@ -154,7 +155,7 @@ video {
 .bpopup{
   position: absolute;
   top: 1;
-  left: 5%;
+  left: 0%;
   width: 100%;
   height: auto;
   display: none;
@@ -194,7 +195,7 @@ video {
 
 @media (max-height : 795px){
   .popup-content {
-      background: #ffffff00;
+      background: linear-gradient(45deg, #42a5f5, #0e2e7f, #0f0470);
       padding: 20px;
       border-radius: 8px;
       text-align: center;
@@ -208,6 +209,23 @@ video {
       justify-content: center;
       align-items: center;
       font-size: small;
+  }
+
+  .popup-content2{
+    background: linear-gradient(45deg, #42a5f5, #0e2e7f, #0f0470);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    width: 55%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: small;
   }
 }
 
