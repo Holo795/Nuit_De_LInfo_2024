@@ -45,32 +45,42 @@ emojiSearch.addEventListener('keyup', e => {
     let emojis = document.querySelectorAll('#emojiList li');
     let matches = 0; 
 
+    console.log(value)
+
     emojis.forEach(emoji => {
         let emojiName = emoji.getAttribute('emoji-name').toLowerCase();
-        if (emojiName.includes(value)) {
+        let values = value.split(' ');
+
+        values.forEach(value => {
+            if (emojiName.includes(value)) {
             emoji.style.display = 'flex';
             matches++;
         }
         else {
             emoji.style.display = 'none';
         }
+        })
 
     });
 
    // Si une correspondance a été trouvée et que la touche espace est enfoncée
    if (e.key === " " && matches > 0) {
-    let matchingEmoji = Array.from(emojis).find(emoji => 
+
+    let flexEmojis = Array.from(emojis).find(emoji => emoji.style.display === 'flex')
+
+    let matchingEmoji = Array.from(flexEmojis).find(emoji => function(value) {
         emoji.getAttribute('emoji-name').toLowerCase().includes(value)
-    );
+    });
+
+    console.log(matchingEmoji)
+
     if (matchingEmoji) {
         emojiSearch.value = matchingEmoji.textContent + " "; // Remplace le texte par l'emoji
-        emojiSearch.focus(); // Redonne le focus au champ de recherche
 
     }
 }
 
 if (e.key === " " && emojiSearch.value !== "") {
-    emojiSearch.value += " "; // Ajouter un espace après l'emoji existant
     emojiSearch.focus(); // Replacer le focus dans l'input
 }
 });
