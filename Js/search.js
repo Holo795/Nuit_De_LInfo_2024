@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchForm = document.getElementById("searchForm");
     searchForm.addEventListener("submit", async function (event) {
         event.preventDefault(); // Empêcher la soumission classique du formulaire
-        const query = document.getElementById("query").value;
+        const query = document.getElementById("searchInput").value;
         displayCustomSearchResults(query); // Lancer la recherche personnalisée
     });
 
@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const resultsContainer = document.getElementById("resultsContainer");
         if (!resultsContainer) return;
 
-        const apiKeyGoogle = '';
-        const cx = '';
+        const apiKeyGoogle = 'AIzaSyAuA1N4Rkr74EsEzdwSEjgy_c2hCzi63ts';
+        const cx = '37410c1e9531d49a9';
 
         // Traduire les emojis en slugs
         const querySlugs = await convertEmojisToSlugs(query);
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Fonction pour convertir les emojis en slugs
     async function convertEmojisToSlugs(query) {
-        const apiKeyEmoji = "";
+        const apiKeyEmoji = "aaab5aea8be43727a7055a906cfbe1add35c6a47";
         const apiUrl = `https://emoji-api.com/emojis?access_key=${apiKeyEmoji}`;
 
         const response = await fetch(apiUrl);
@@ -94,6 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 })
+
+
+
+
 
 fetch('https://emoji-api.com/emojis?access_key=aaab5aea8be43727a7055a906cfbe1add35c6a47')
     .then(res => res.json())
