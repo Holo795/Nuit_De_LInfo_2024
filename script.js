@@ -8,7 +8,7 @@ triggers.forEach((trigger) => {
     trigger.addEventListener('click', () => {
       // Fermer toutes les pop-ups ouvertes
       popups.forEach((popup) => {
-        popup.classList.remove('show');
+        popup.style.display = 'none';
       });
       
       // Identifier la pop-up associée à l'image
@@ -16,7 +16,7 @@ triggers.forEach((trigger) => {
       const popup = document.getElementById(popupId);
       console.log(popup)
       if (popup) {
-        popup.classList.add('show');
+        popup.style.display = 'flex' ;
       }
     });
   });
@@ -26,7 +26,7 @@ closeButtons.forEach((button) => {
   button.addEventListener('click', () => {
     const popupId = button.dataset.popup;
     const popups = document.getElementById(popupId);
-    popups.classList.remove('show');
+    popup.style.display = 'none';
   });
 });
 
