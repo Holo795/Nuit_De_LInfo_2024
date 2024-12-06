@@ -41,21 +41,44 @@ function loadEmoji(data){
 
 
 emojiSearch.addEventListener('keyup', e => {
-    let value = e.target.value.toLowerCase(); 
+    let value = e.target.value.toLowerCase();
     let emojis = document.querySelectorAll('#emojiList li');
+    let matches = 0; 
+
     emojis.forEach(emoji => {
         let emojiName = emoji.getAttribute('emoji-name').toLowerCase();
         if (emojiName.includes(value)) {
-            emoji.style.display = 'flex'; 
-        } else {
-            emoji.style.display = 'none'; 
+            emoji.style.display = 'flex';
+            matches++;
         }
+        else {
+            emoji.style.display = 'none';
+        }
+
     });
+
+   // Si une correspondance a été trouvée et que la touche espace est enfoncée
+   if (e.key === " " && matches > 0) {
+    let matchingEmoji = Array.from(emojis).find(emoji => 
+        emoji.getAttribute('emoji-name').toLowerCase().includes(value)
+    );
+    if (matchingEmoji) {
+        emojiSearch.value = matchingEmoji.textContent + " "; // Remplace le texte par l'emoji
+        emojiSearch.focus(); // Redonne le focus au champ de recherche
+
+    }
+}
+
+if (e.key === " " && emojiSearch.value !== "") {
+    emojiSearch.value += " "; // Ajouter un espace après l'emoji existant
+    emojiSearch.focus(); // Replacer le focus dans l'input
+}
 });
 
 
+
 function addEmojiToInput(emojiCharacter) {
-    const emojiSearch = document.querySelector('#searchInput'); // Sélectionner le champ input
-    emojiSearch.value += emojiCharacter; // Ajouter l'emoji dans le champ
-    emojiSearch.focus(); // Focus sur la barre de recherche
+    const emojiSearch = document.querySelector('#searchInput');
+    emojiSearch.value += emojiCharacter; 
+    emojiSearch.focus(); 
 }
