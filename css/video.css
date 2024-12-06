@@ -1,0 +1,15 @@
+video {
+      display: block; /* Nécessaire pour que margin fonctionne */
+      margin: 50px auto; /* Centre horizontalement et ajoute un espace en haut/bas */
+      border: 2px solid #000;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video_ocean {
+    background: linear-gradient(135deg, #0f0470, #0e2e7f, #42a5f5);
+    border-radius: 20px;
+    margin: 20px;
+    border: 1px solid #000;
+}
+
