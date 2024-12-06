@@ -1,87 +1,77 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    color:black;
-    align-items: center;
-    position: relative; /* Contexte de positionnement pour les images superposées */
-    height: auto; /* Taille du conteneur */
-}
-
-
-.corps {
-    width: 35%; /* Ajuste l'image sans déformation */
-    z-index: 0; /* Place en arrière-plan */
-}
-
-
-.popup-trigger {
-    position: absolute;
-    cursor: pointer;
-    transition: 1s ;
-}
-
-.popup-trigger:hover {
-    width: 12%;
-}
-
-.coeur {
-    position: absolute;
-    width: 7%; /* Largeur personnalisée */
-    left: 17%;
-    top: 30%;
-
-}
-
-.poumon {
-    position: absolute;
-    width: 10%; /* Largeur personnalisée */
-    top: 38%;
-    left: 10%;
-}
-
-.estomac {
-    position: absolute;
-    top: 60%; /* Positionnez l'image en dessous des deux autres */
-    left: 10%;
-    width: 10%; /* Taille personnalisée */
-    height: auto; /* Maintient le ratio */
-    z-index: 2; /* Au-dessus de l'image de fond */
-}
-
-.sueur {
-    position: absolute;
-    top: 10%; /* Positionnez l'image en dessous des deux autres */
-    left : 5%;
-    width: 10%; /* Taille personnalisée */
-    height: auto; /* Maintient le ratio */
-    z-index: 2; /* Au-dessus de l'image de fond */
-}
-
-.popup {
-    position: absolute;
-    left: 40%;
-    width: 50%;
-    height: auto;
+.body-container {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* Effet de fondu */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease, visibility 0.5s;
-}
-
-.popup.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-.popup-content {
-    background: #fff;
+    position: relative; /* Contexte de positionnement pour les images superposées */
+    width: 100vh;
+    height: auto; /* Taille du conteneur */   
+    
+  }
+  
+  
+  .corps {
+    width: 70%; /* Ajuste l'image sans déformation */
+    z-index: 0; /* Place en arrière-plan */
+  }
+  
+  
+  .popup-trigger {
+    position: absolute;
+    cursor: pointer;
+    transition: 1s ;
+  }
+  
+  .popup-trigger:hover {
+    width: 25%;
+  }
+  
+  .coeur {
+    position: absolute;
+    width: 15%; /* Largeur personnalisée */
+    left: 49%;
+    top: 30%;
+    
+  }
+  
+  .poumon {
+    position: absolute;
+    width: 20%; /* Largeur personnalisée */
+    top: 38%;
+    left: 35%;
+  }
+  
+  .estomac {
+    position: absolute;
+    top: 60%; /* Positionnez l'image en dessous des deux autres */
+    left: 40%;
+    width: 20%; /* Taille personnalisée */
+    height: auto; /* Maintient le ratio */
+    z-index: 2; /* Au-dessus de l'image de fond */
+  }
+  
+  .sueur {
+    position: absolute;
+    top: 10%; /* Positionnez l'image en dessous des deux autres */
+    left : 25%;
+    width: 20%; /* Taille personnalisée */
+    height: auto; /* Maintient le ratio */
+    z-index: 2; /* Au-dessus de l'image de fond */
+  }
+  
+  .popup {
+    position: absolute;
+    top: 1;
+    left: 85%;
+    width: 100%;
+    height: auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .popup-content {
+    background: linear-gradient(135deg, #0f0470, #0e2e7f, #42a5f5);
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -94,29 +84,103 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.popup.show .popup-content {
-    transform: scale(1.05); /* Effet zoom */
-}
-
-.popup-content img {
+  }
+  
+  
+  
+  .popup-content img {
     height: 60%;
     width: 60%;
-}
-
-.close {
+  }
+  
+  .close {
     position: absolute;
     top: 10px;
     right: 10px;
     font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-}
-
-@media (max-height : 795px){
+  }
+  
+  .buttonpop
+  {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%;
+    height: 5%;
+    
+  }
+  
+  .good{
+    display: block;
+    background-color: #71ee90;
+    border-radius: 10px;
+    border: 4px double #1fec41;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    width: 150%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .bad{
+    display: block;
+    background-color: #ee7171;
+    border-radius: 10px;
+    border: 4px double #ec1f1f;
+    color: #ffffff;
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .bpopup{
+    position: absolute;
+    top: 1;
+    left: 0%;
+    width: 100%;
+    height: auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+  
+    /* Effet de fondu */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s;
+  }
+  
+  
+  .popup-content2{
+    background: linear-gradient(45deg, #42a5f5, #0e2e7f, #0f0470);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+    width: 85%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content2 img {
+    height: 60%;
+    width: 60%;
+  }
+  
+  
+  @media (max-height : 795px){
     .popup-content {
-        background: #fff;
+        background: linear-gradient(45deg, #42a5f5, #0e2e7f, #0f0470);
         padding: 20px;
         border-radius: 8px;
         text-align: center;
@@ -131,7 +195,26 @@ body {
         align-items: center;
         font-size: small;
     }
-}
-
-
+  
+    .popup-content2{
+      background: linear-gradient(45deg, #42a5f5, #0e2e7f, #0f0470);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1);
+      transition: transform 0.3s ease;
+      width: 55%;
+      height: 55vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: small;
+    }
+  }
+  
+  
+  
+  
   
